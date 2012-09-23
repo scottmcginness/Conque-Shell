@@ -104,6 +104,22 @@ if g:ConqueTerm_PromptRegex != ''
     hi def link ConquePrompt Identifier
 endif
 
+" Custom prompt
+if g:ConqueTerm_CustomPrompt != 0
+    syn match ConquePromptLine '^\w\+@[0-9A-Za-z._-]\+:[\~/][/0-9A-Za-z._\~,:-]*\(\[[^\]]*\]\)?' contains=ConquePromptUser,ConquePromptDollar,ConquePromptDirectory,ConquePromptGit
+    syn match ConquePromptUser '^\w\+@[0-9A-Za-z-]\+' contained oneline
+    syn match ConquePromptDollar '^\$' contained oneline
+    syn match ConquePromptDirectory '[\~/][/0-9A-Za-z._\~,:-]*' contained oneline
+    syn match ConquePromptGit '\[[^\]]*\]' contained oneline
+    hi ConquePromptUser term=NONE cterm=NONE gui=NONE ctermfg=46 guifg=#32cd32
+    hi ConquePromptDollar term=NONE cterm=NONE gui=NONE ctermfg=46 guifg=#32cd32
+    hi ConquePromptDirectory term=NONE cterm=NONE gui=NONE ctermfg=45 guifg=#00d7ff
+    hi ConquePromptGit term=NONE cterm=NONE gui=NONE ctermfg=220 guifg=#ffd700
+endif
+
+
+
+
 " Strings
 syn region ConqueString start=+'+ end=+'+ skip=+\\'+ contained oneline
 syn region ConqueString start=+"+ end=+"+ skip=+\\"+ contained oneline
