@@ -125,6 +125,11 @@ if !exists('g:ConqueTerm_PromptRegex')
     let g:ConqueTerm_PromptRegex = '^\w\+@[0-9A-Za-z_.-]\+:[0-9A-Za-z_./\~,:-]\+\$'
 endif " }}}
 
+" Turn on custom regexes for highlighting bash prompt {{{
+if !exists('g:ConqueTerm_CustomPrompt')
+    let g:ConqueTerm_CustomPrompt = 0
+endif " }}}
+
 " Choose which Python version to attempt to load first {{{
 " Valid values are 2, 3 or 0 (no preference)
 if !exists('g:ConqueTerm_PyVersion')
