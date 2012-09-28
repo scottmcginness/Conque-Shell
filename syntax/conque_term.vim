@@ -106,10 +106,10 @@ endif
 
 " Custom prompt
 if g:ConqueTerm_CustomPrompt != 0
-    syn match ConquePromptLine '^\w\+@[0-9A-Za-z._-]\+:[\~/][/0-9A-Za-z._\~,:-]*\(\[[^\]]*\]\)?$' contains=ConquePromptUser,ConquePromptDollar,ConquePromptDirectory,ConquePromptGit
+    syn match ConquePromptLine '^\w\+@[0-9A-Za-z._-]\+:[\~/][/0-9A-Za-z._\~,:-]*?\(\[[^\]]*\]\)?$' contains=ConquePromptUser,ConquePromptDirectory,ConquePromptGit
     syn match ConquePromptUser '^\w\+@[0-9A-Za-z-]\+' contained oneline
     syn match ConquePromptDollar '^\$' contained oneline
-    syn match ConquePromptDirectory '[\~/][/0-9A-Za-z._\~,:-]*' contained oneline
+    syn match ConquePromptDirectory '[\~/][/0-9A-Za-z._\~,:-]*?' contained oneline
     syn match ConquePromptGit '\[[^\]]*\]$' contained oneline
     hi ConquePromptUser term=NONE cterm=NONE gui=NONE ctermfg=46 guifg=#32cd32
     hi ConquePromptDollar term=NONE cterm=NONE gui=NONE ctermfg=46 guifg=#32cd32
