@@ -116,10 +116,10 @@ if g:ConqueTerm_CustomPrompt != 0
     hi ConquePromptDirectory term=NONE cterm=NONE gui=NONE ctermfg=45 guifg=#00d7ff
     hi ConquePromptGit term=NONE cterm=NONE gui=NONE ctermfg=220 guifg=#ffd700
 
-    syn match ConquePry '^\[[0-9]\+\]pry(.*)[*>]' contains=ConquePryNumber,ConquePryPry,ConquePryObject,ConquePryPrompt,ConquePryMore
+    syn match ConquePry '^\[[0-9]\+\]pry([^)]\+)[*>]' contains=ConquePryNumber,ConquePryPry,ConquePryObject,ConquePryPrompt,ConquePryMore
     syn match ConquePryNumber '^\[[0-9]\+\]' contained oneline
     syn match ConquePryPry 'pry' contained oneline
-    syn match ConquePryObject '(.*)' contained oneline
+    syn match ConquePryObject '([^)]\+)' contained oneline
     syn match ConquePryPrompt '[>]' contained oneline
     syn match ConquePryMore '[*]' contained oneline
     hi ConquePryNumber term=NONE cterm=NONE gui=NONE ctermfg=76 guifg=#32cd32
